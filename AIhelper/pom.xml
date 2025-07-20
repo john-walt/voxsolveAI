@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>42.7.3</scope>
+           <version>42.7.5</version>
         </dependency>
 
         <!-- Twilio SDK -->
