@@ -102,10 +102,10 @@ public class LoginController {
 //        }
 
 		// Check if user already exists
-		if (userRepository.findByEmail(email).isPresent()) {
-			ResponseDTO responseDTO = new ResponseDTO(409, "User already exists", null);
-			return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
-		}
+//		if (userRepository.findByEmail(email).isPresent()) {
+//			ResponseDTO responseDTO = new ResponseDTO(409, "User already exists", null);
+//			return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
+//		}
 
 		// Save user details to database with hashed password
 		String otp = generateRandomOTP();
@@ -122,7 +122,7 @@ public class LoginController {
 			return new ResponseEntity<>(responseDTO, HttpStatus.METHOD_NOT_ALLOWED);
 		}
 		try {
-			User newUser = new User(generateRandom10DigitValue(), email, passwordEncoder.encode(password), hashedOtp,
+			User newUser = new User(phoneNumber.isEmpty()? generateRandom10DigitValue():phoneNumber, email, passwordEncoder.encode(password), hashedOtp,
 					name);
 			newU = userRepository.save(newUser);
 		} catch (Exception e) {
