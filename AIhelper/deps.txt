@@ -1,0 +1,621 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.b2b:AIhelper:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.scope' for org.postgresql:postgresql:jar must be one of [provided, compile, runtime, test, system] but is '42.5.0'. @ line 86, column 20
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------------< com.b2b:AIhelper >--------------------------
+[INFO] Building AIhelper 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ AIhelper ---
+[INFO] com.b2b:AIhelper:jar:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:3.4.3:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:3.4.3:compile (version managed from 3.4.3; scope not updated to compile)
+[INFO] |  |  +- (org.springframework.boot:spring-boot:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework.boot:spring-boot-autoconfigure:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.5.16:compile (version managed from 1.5.16)
+[INFO] |  |  |  |  +- ch.qos.logback:logback-core:jar:1.5.16:compile (version managed from 1.5.16)
+[INFO] |  |  |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.16; omitted for duplicate)
+[INFO] |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.24.3:compile (version managed from 2.24.3)
+[INFO] |  |  |  |  +- org.apache.logging.log4j:log4j-api:jar:2.24.3:compile (version managed from 2.24.3)
+[INFO] |  |  |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.16; omitted for duplicate)
+[INFO] |  |  |  \- org.slf4j:jul-to-slf4j:jar:2.0.16:compile (version managed from 2.0.16)
+[INFO] |  |  |     \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.16; omitted for duplicate)
+[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile (version managed from 2.1.1)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- org.yaml:snakeyaml:jar:2.3:compile (version managed from 2.3)
+[INFO] |  +- org.springframework.boot:spring-boot-starter-json:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-web:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.18.2:compile (version managed from 2.18.2)
+[INFO] |  |  |  +- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  |  \- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.18.2:compile (version managed from 2.18.2)
+[INFO] |  |     +- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |     \- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  +- (jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile - version managed from 2.1.1; omitted for duplicate)
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.36:compile (version managed from 10.1.36)
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.36:compile (version managed from 10.1.36)
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.36:compile (version managed from 10.1.36)
+[INFO] |  |     \- (org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.36:compile - version managed from 10.1.36; omitted for duplicate)
+[INFO] |  +- org.springframework:spring-web:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |  +- org.springframework:spring-beans:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |  |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (io.micrometer:micrometer-observation:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |  \- org.springframework:spring-webmvc:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |     +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- org.springframework:spring-context:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |     |  +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     |  +- (org.springframework:spring-expression:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     |  \- (io.micrometer:micrometer-observation:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- org.springframework:spring-expression:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |     |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     \- (org.springframework:spring-web:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] +- org.springframework.boot:spring-boot-starter-security:jar:3.4.3:compile
+[INFO] |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework:spring-aop:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  +- org.springframework.security:spring-security-config:jar:6.4.3:compile (version managed from 6.4.3)
+[INFO] |  |  +- (org.springframework.security:spring-security-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  \- org.springframework.security:spring-security-web:jar:6.4.3:compile (version managed from 6.4.3; scope not updated to compile)
+[INFO] |     +- (org.springframework.security:spring-security-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-expression:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     \- (org.springframework:spring-web:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] +- org.springframework.boot:spring-boot-starter-actuator:jar:3.4.3:compile
+[INFO] |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework.boot:spring-boot-actuator-autoconfigure:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  +- org.springframework.boot:spring-boot-actuator:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  |  \- (org.springframework.boot:spring-boot:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework.boot:spring-boot:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework.boot:spring-boot-autoconfigure:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:runtime - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  \- (com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.18.2:runtime - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  +- io.micrometer:micrometer-observation:jar:1.14.4:compile (version managed from 1.14.4)
+[INFO] |  |  \- io.micrometer:micrometer-commons:jar:1.14.4:compile (version managed from 1.14.4)
+[INFO] |  \- io.micrometer:micrometer-jakarta9:jar:1.14.4:compile (version managed from 1.14.4)
+[INFO] |     +- io.micrometer:micrometer-core:jar:1.14.4:compile (version managed from 1.14.4)
+[INFO] |     |  +- (io.micrometer:micrometer-commons:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |     |  +- (io.micrometer:micrometer-observation:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |     |  +- org.hdrhistogram:HdrHistogram:jar:2.2.2:runtime
+[INFO] |     |  \- org.latencyutils:LatencyUtils:jar:2.0.3:runtime
+[INFO] |     +- (io.micrometer:micrometer-commons:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |     \- (io.micrometer:micrometer-observation:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] +- org.springframework.boot:spring-boot-starter-data-jpa:jar:3.4.3:compile
+[INFO] |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- com.zaxxer:HikariCP:jar:5.1.0:compile (version managed from 5.1.0)
+[INFO] |  |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 1.7.36; omitted for duplicate)
+[INFO] |  |  \- org.springframework:spring-jdbc:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |     +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |     +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |     \- (org.springframework:spring-tx:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  +- org.hibernate.orm:hibernate-core:jar:6.6.8.Final:compile (version managed from 6.6.8.Final)
+[INFO] |  |  +- jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile (version managed from 3.1.0)
+[INFO] |  |  +- jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile (version managed from 2.0.1)
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.6.1.Final:runtime (version managed from 3.5.0.Final)
+[INFO] |  |  +- org.hibernate.common:hibernate-commons-annotations:jar:7.0.3.Final:runtime
+[INFO] |  |  +- io.smallrye:jandex:jar:3.2.0:runtime
+[INFO] |  |  +- com.fasterxml:classmate:jar:1.7.0:runtime (version managed from 1.5.1)
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.15.11:runtime (version managed from 1.15.11; scope not updated to runtime)
+[INFO] |  |  +- (jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:runtime - version managed from 4.0.0; omitted for duplicate)
+[INFO] |  |  +- org.glassfish.jaxb:jaxb-runtime:jar:4.0.5:runtime (version managed from 4.0.2)
+[INFO] |  |  |  \- org.glassfish.jaxb:jaxb-core:jar:4.0.5:runtime (version managed from 4.0.5)
+[INFO] |  |  |     +- (jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:runtime - version managed from 4.0.2; omitted for duplicate)
+[INFO] |  |  |     +- (jakarta.activation:jakarta.activation-api:jar:2.1.3:runtime - version managed from 2.1.3; omitted for duplicate)
+[INFO] |  |  |     +- (org.eclipse.angus:angus-activation:jar:2.0.2:runtime - version managed from 2.0.2; omitted for duplicate)
+[INFO] |  |  |     +- org.glassfish.jaxb:txw2:jar:4.0.5:runtime (version managed from 4.0.5)
+[INFO] |  |  |     \- com.sun.istack:istack-commons-runtime:jar:4.1.2:runtime (version managed from 4.1.2)
+[INFO] |  |  +- jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime (version managed from 2.0.1)
+[INFO] |  |  \- org.antlr:antlr4-runtime:jar:4.13.0:compile
+[INFO] |  +- org.springframework.data:spring-data-jpa:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  +- org.springframework.data:spring-data-commons:jar:3.4.3:compile (version managed from 3.4.3)
+[INFO] |  |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.2; omitted for duplicate)
+[INFO] |  |  +- org.springframework:spring-orm:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  +- (org.springframework:spring-jdbc:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  \- (org.springframework:spring-tx:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- org.springframework:spring-tx:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.antlr:antlr4-runtime:jar:4.13.0:compile - omitted for duplicate)
+[INFO] |  |  +- (jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile - version managed from 2.0.0; omitted for duplicate)
+[INFO] |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.2; omitted for duplicate)
+[INFO] |  \- org.springframework:spring-aspects:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |     \- org.aspectj:aspectjweaver:jar:1.9.22.1:compile (version managed from 1.9.22.1)
+[INFO] +- org.springframework.boot:spring-boot-starter-oauth2-client:jar:3.4.3:compile
+[INFO] |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- (org.springframework.security:spring-security-config:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework.security:spring-security-core:jar:6.4.3:compile (version managed from 6.4.3; scope not updated to compile)
+[INFO] |  |  +- org.springframework.security:spring-security-crypto:jar:6.4.3:compile (version managed from 6.4.3)
+[INFO] |  |  +- (org.springframework:spring-aop:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-expression:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (io.micrometer:micrometer-observation:jar:1.14.4:compile - version managed from 1.14.4; omitted for duplicate)
+[INFO] |  +- (org.springframework.security:spring-security-oauth2-client:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  \- org.springframework.security:spring-security-oauth2-jose:jar:6.4.3:compile (version managed from 6.4.3)
+[INFO] |     +- (org.springframework.security:spring-security-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |     +- (org.springframework.security:spring-security-oauth2-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |     +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |     \- com.nimbusds:nimbus-jose-jwt:jar:9.37.3:compile
+[INFO] |        \- (com.github.stephenc.jcip:jcip-annotations:jar:1.0-1:compile - omitted for duplicate)
+[INFO] +- org.springdoc:springdoc-openapi-starter-webmvc-ui:jar:2.3.0:compile
+[INFO] |  +- org.springdoc:springdoc-openapi-starter-webmvc-api:jar:2.3.0:compile
+[INFO] |  |  \- org.springdoc:springdoc-openapi-starter-common:jar:2.3.0:compile
+[INFO] |  |     +- (org.springframework.boot:spring-boot-autoconfigure:jar:3.4.3:compile - version managed from 3.2.0; omitted for duplicate)
+[INFO] |  |     \- io.swagger.core.v3:swagger-core-jakarta:jar:2.2.19:compile
+[INFO] |  |        +- org.apache.commons:commons-lang3:jar:3.17.0:compile (version managed from 3.13.0)
+[INFO] |  |        +- (org.slf4j:slf4j-api:jar:2.0.16:compile - version managed from 2.0.9; omitted for duplicate)
+[INFO] |  |        +- io.swagger.core.v3:swagger-annotations-jakarta:jar:2.2.19:compile
+[INFO] |  |        +- io.swagger.core.v3:swagger-models-jakarta:jar:2.2.19:compile
+[INFO] |  |        |  \- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.15.2; omitted for duplicate)
+[INFO] |  |        +- (org.yaml:snakeyaml:jar:2.3:compile - version managed from 2.2; omitted for duplicate)
+[INFO] |  |        +- (jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:compile - version managed from 3.0.0; omitted for duplicate)
+[INFO] |  |        +- jakarta.validation:jakarta.validation-api:jar:3.0.2:compile (version managed from 3.0.2)
+[INFO] |  |        +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.15.2; omitted for duplicate)
+[INFO] |  |        +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.15.2; omitted for duplicate)
+[INFO] |  |        +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.18.2:compile (version managed from 2.15.2)
+[INFO] |  |        |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |        |  +- (org.yaml:snakeyaml:jar:2.3:compile - version managed from 2.3; omitted for duplicate)
+[INFO] |  |        |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |        \- (com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.18.2:compile - version managed from 2.15.2; omitted for duplicate)
+[INFO] |  \- org.webjars:swagger-ui:jar:5.10.3:compile
+[INFO] +- org.postgresql:postgresql:jar:42.7.5:42.5.0
+[INFO] |  \- org.checkerframework:checker-qual:jar:3.48.3:compile
+[INFO] +- com.twilio.sdk:twilio:jar:8.28.0:compile
+[INFO] |  +- commons-codec:commons-codec:jar:1.17.2:compile (version managed from 1.15)
+[INFO] |  +- commons-io:commons-io:jar:2.7:compile
+[INFO] |  +- io.jsonwebtoken:jjwt-api:jar:0.11.2:compile
+[INFO] |  +- io.jsonwebtoken:jjwt-jackson:jar:0.11.2:compile
+[INFO] |  |  \- (io.jsonwebtoken:jjwt-api:jar:0.11.2:compile - omitted for duplicate)
+[INFO] |  +- io.jsonwebtoken:jjwt-impl:jar:0.11.2:runtime
+[INFO] |  |  \- (io.jsonwebtoken:jjwt-api:jar:0.11.2:runtime - omitted for duplicate)
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
+[INFO] |  |  +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.13; omitted for duplicate)
+[INFO] |  |  \- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.apache.httpcomponents:httpcore:jar:4.4.16:compile (version managed from 4.4.13)
+[INFO] |  +- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.12.6; omitted for duplicate)
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile (version managed from 2.12.6)
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile (version managed from 2.12.6; scope not updated to compile)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.18.2:compile (version managed from 2.12.6; scope not updated to compile)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  \- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.18.2:compile (version managed from 2.12.6)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  +- org.codehaus.woodstox:stax2-api:jar:4.2.2:compile
+[INFO] |  |  \- com.fasterxml.woodstox:woodstox-core:jar:7.0.0:compile
+[INFO] |  |     \- (org.codehaus.woodstox:stax2-api:jar:4.2.2:compile - omitted for duplicate)
+[INFO] |  +- org.slf4j:slf4j-api:jar:2.0.16:compile (version managed from 1.7.30)
+[INFO] |  \- javax.xml.bind:jaxb-api:jar:2.3.1:compile
+[INFO] |     \- javax.activation:javax.activation-api:jar:1.2.0:compile
+[INFO] +- org.springframework.boot:spring-boot-devtools:jar:3.4.3:runtime
+[INFO] |  +- org.springframework.boot:spring-boot:jar:3.4.3:compile (version managed from 3.4.3; scope not updated to compile)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  \- org.springframework.boot:spring-boot-autoconfigure:jar:3.4.3:compile (version managed from 3.4.3; scope not updated to compile)
+[INFO] |     \- (org.springframework.boot:spring-boot:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.4.3:test
+[INFO] |  +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:test - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.4.3:test (version managed from 3.4.3)
+[INFO] |  |  +- (org.springframework.boot:spring-boot:jar:3.4.3:test - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-test:jar:6.2.3:test - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.4.3:test (version managed from 3.4.3)
+[INFO] |  |  +- (org.springframework.boot:spring-boot:jar:3.4.3:test - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework.boot:spring-boot-test:jar:3.4.3:test - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework.boot:spring-boot-autoconfigure:jar:3.4.3:test - version managed from 3.4.3; omitted for duplicate)
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.9.0:test (version managed from 2.9.0)
+[INFO] |  |  +- (net.minidev:json-smart:jar:2.5.2:test - version managed from 2.5.0; omitted for duplicate)
+[INFO] |  |  \- (org.slf4j:slf4j-api:jar:2.0.16:test - version managed from 2.0.11; omitted for duplicate)
+[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:compile (version managed from 4.0.2)
+[INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.3:compile (version managed from 2.1.3)
+[INFO] |  +- net.minidev:json-smart:jar:2.5.2:compile (version managed from 2.5.2)
+[INFO] |  |  \- net.minidev:accessors-smart:jar:2.5.2:compile
+[INFO] |  |     \- org.ow2.asm:asm:jar:9.7.1:compile
+[INFO] |  +- org.assertj:assertj-core:jar:3.26.3:test (version managed from 3.26.3)
+[INFO] |  |  \- (net.bytebuddy:byte-buddy:jar:1.15.11:test - version managed from 1.14.18; omitted for duplicate)
+[INFO] |  +- org.awaitility:awaitility:jar:4.2.2:test (version managed from 4.2.2)
+[INFO] |  |  \- (org.hamcrest:hamcrest:jar:2.2:test - version managed from 2.1; omitted for duplicate)
+[INFO] |  +- org.hamcrest:hamcrest:jar:2.2:test (version managed from 2.2)
+[INFO] |  +- org.junit.jupiter:junit-jupiter:jar:5.11.4:test (version managed from 5.11.4)
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.11.4:test (version managed from 5.11.4)
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.3.0:test
+[INFO] |  |  |  +- org.junit.platform:junit-platform-commons:jar:1.11.4:test (version managed from 1.11.4)
+[INFO] |  |  |  |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+[INFO] |  |  |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-params:jar:5.11.4:test (version managed from 5.11.4)
+[INFO] |  |  |  +- (org.junit.jupiter:junit-jupiter-api:jar:5.11.4:test - version managed from 5.11.4; omitted for duplicate)
+[INFO] |  |  |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+[INFO] |  |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.11.4:test (version managed from 5.11.4)
+[INFO] |  |     +- org.junit.platform:junit-platform-engine:jar:1.11.4:test (version managed from 1.11.4)
+[INFO] |  |     |  +- (org.opentest4j:opentest4j:jar:1.3.0:test - omitted for duplicate)
+[INFO] |  |     |  +- (org.junit.platform:junit-platform-commons:jar:1.11.4:test - version managed from 1.11.4; omitted for duplicate)
+[INFO] |  |     |  \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+[INFO] |  |     +- (org.junit.jupiter:junit-jupiter-api:jar:5.11.4:test - version managed from 5.11.4; omitted for duplicate)
+[INFO] |  |     \- (org.apiguardian:apiguardian-api:jar:1.1.2:test - omitted for duplicate)
+[INFO] |  +- org.mockito:mockito-core:jar:5.14.2:test (version managed from 5.14.2)
+[INFO] |  |  +- (net.bytebuddy:byte-buddy:jar:1.15.11:test - version managed from 1.15.4; omitted for duplicate)
+[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.15.11:test (version managed from 1.15.4)
+[INFO] |  |  \- org.objenesis:objenesis:jar:3.3:test
+[INFO] |  +- org.mockito:mockito-junit-jupiter:jar:5.14.2:test (version managed from 5.14.2)
+[INFO] |  |  +- (org.mockito:mockito-core:jar:5.14.2:test - version managed from 5.14.2; omitted for duplicate)
+[INFO] |  |  \- (org.junit.jupiter:junit-jupiter-api:jar:5.11.4:test - version managed from 5.11.2; omitted for duplicate)
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.3:test (version managed from 1.5.3)
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-core:jar:6.2.3:compile (version managed from 6.2.3; scope not updated to compile)
+[INFO] |  |  \- org.springframework:spring-jcl:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO] |  +- org.springframework:spring-test:jar:6.2.3:test (version managed from 6.2.3)
+[INFO] |  |  \- (org.springframework:spring-core:jar:6.2.3:test - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.10.0:test (version managed from 2.10.0)
+[INFO] |     \- (jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:test - version managed from 2.3.3; omitted for duplicate)
+[INFO] +- org.springframework.security:spring-security-test:jar:6.4.3:test
+[INFO] |  +- (org.springframework.security:spring-security-core:jar:6.4.3:test - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  +- (org.springframework.security:spring-security-web:jar:6.4.3:test - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  +- (org.springframework:spring-core:jar:6.2.3:test - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  \- (org.springframework:spring-test:jar:6.2.3:test - version managed from 6.2.3; omitted for duplicate)
+[INFO] +- org.springframework.security:spring-security-oauth2-client:jar:6.4.3:compile
+[INFO] |  +- (org.springframework.security:spring-security-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  +- org.springframework.security:spring-security-oauth2-core:jar:6.4.3:compile (version managed from 6.4.3)
+[INFO] |  |  +- (org.springframework.security:spring-security-core:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-web:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  +- (org.springframework.security:spring-security-web:jar:6.4.3:compile - version managed from 6.4.3; omitted for duplicate)
+[INFO] |  +- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO] |  \- com.nimbusds:oauth2-oidc-sdk:jar:9.43.6:compile
+[INFO] |     +- com.github.stephenc.jcip:jcip-annotations:jar:1.0-1:compile
+[INFO] |     +- com.nimbusds:content-type:jar:2.2:compile
+[INFO] |     +- (net.minidev:json-smart:jar:2.5.2:compile - version managed from 2.5.2; omitted for duplicate)
+[INFO] |     +- com.nimbusds:lang-tag:jar:1.7:compile
+[INFO] |     \- (com.nimbusds:nimbus-jose-jwt:jar:9.37.3:compile - omitted for duplicate)
+[INFO] +- com.google.api-client:google-api-client:jar:2.2.0:compile
+[INFO] |  +- (commons-codec:commons-codec:jar:1.17.2:compile - version managed from 1.15; omitted for duplicate)
+[INFO] |  +- com.google.oauth-client:google-oauth-client:jar:1.34.1:compile
+[INFO] |  |  +- (com.google.http-client:google-http-client:jar:1.42.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  |  +- (com.google.http-client:google-http-client-gson:jar:1.42.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  |  \- (com.google.guava:guava:jar:31.1-android:compile - omitted for conflict with 31.1-jre)
+[INFO] |  +- com.google.http-client:google-http-client-gson:jar:1.42.3:compile
+[INFO] |  |  +- (com.google.http-client:google-http-client:jar:1.42.3:compile - omitted for duplicate)
+[INFO] |  |  \- (com.google.code.gson:gson:jar:2.11.0:compile - version managed from 2.10; omitted for duplicate)
+[INFO] |  +- com.google.guava:guava:jar:31.1-jre:compile
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.1:compile - omitted for conflict with 1.0.2)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (org.checkerframework:checker-qual:jar:3.12.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.11.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  \- (com.google.j2objc:j2objc-annotations:jar:1.3:compile - omitted for conflict with 3.0.0)
+[INFO] |  +- com.google.http-client:google-http-client-apache-v2:jar:1.42.3:compile
+[INFO] |  |  +- (com.google.http-client:google-http-client:jar:1.42.3:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.httpcomponents:httpclient:jar:4.5.13:compile - omitted for duplicate)
+[INFO] |  |  \- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.15; omitted for duplicate)
+[INFO] |  +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.16; omitted for duplicate)
+[INFO] |  +- (org.apache.httpcomponents:httpclient:jar:4.5.14:compile - omitted for conflict with 4.5.13)
+[INFO] |  \- com.google.http-client:google-http-client:jar:1.42.3:compile
+[INFO] |     +- (org.apache.httpcomponents:httpclient:jar:4.5.13:compile - omitted for duplicate)
+[INFO] |     +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.15; omitted for duplicate)
+[INFO] |     +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |     +- (com.google.errorprone:error_prone_annotations:jar:2.16:compile - omitted for conflict with 2.37.0)
+[INFO] |     +- (com.google.guava:guava:jar:30.1.1-android:compile - omitted for conflict with 31.1-jre)
+[INFO] |     +- (com.google.j2objc:j2objc-annotations:jar:1.3:compile - omitted for conflict with 3.0.0)
+[INFO] |     +- (io.opencensus:opencensus-api:jar:0.31.1:compile - omitted for duplicate)
+[INFO] |     \- (io.opencensus:opencensus-contrib-http-util:jar:0.31.1:compile - omitted for duplicate)
+[INFO] +- com.google.auth:google-auth-library-oauth2-http:jar:1.35.0:compile
+[INFO] |  +- com.google.auto.value:auto-value-annotations:jar:1.11.0:compile
+[INFO] |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] |  +- com.google.auth:google-auth-library-credentials:jar:1.35.0:compile
+[INFO] |  +- (com.google.http-client:google-http-client:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (com.google.http-client:google-http-client-gson:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (com.google.guava:guava:jar:33.4.0-android:compile - omitted for conflict with 31.1-jre)
+[INFO] |  +- com.google.errorprone:error_prone_annotations:jar:2.37.0:compile
+[INFO] |  \- com.google.code.gson:gson:jar:2.11.0:compile (version managed from 2.12.1)
+[INFO] |     \- (com.google.errorprone:error_prone_annotations:jar:2.27.0:compile - omitted for conflict with 2.37.0)
+[INFO] +- com.google.cloud:google-cloud-vertexai:jar:1.22.0:compile
+[INFO] |  +- io.grpc:grpc-api:jar:1.70.0:compile
+[INFO] |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  +- io.grpc:grpc-stub:jar:1.70.0:compile
+[INFO] |  +- org.codehaus.mojo:animal-sniffer-annotations:jar:1.24:compile
+[INFO] |  +- io.grpc:grpc-protobuf:jar:1.70.0:compile
+[INFO] |  +- io.grpc:grpc-protobuf-lite:jar:1.70.0:runtime
+[INFO] |  +- com.google.api:api-common:jar:2.48.0:compile
+[INFO] |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- com.google.j2objc:j2objc-annotations:jar:3.0.0:compile
+[INFO] |  +- com.google.protobuf:protobuf-java:jar:3.25.5:compile
+[INFO] |  +- com.google.api.grpc:proto-google-common-protos:jar:2.56.0:compile
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-vertexai-v1:jar:1.22.0:compile
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  \- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (com.google.guava:guava:jar:33.4.0-jre:compile - omitted for conflict with 31.1-jre)
+[INFO] |  +- com.google.guava:failureaccess:jar:1.0.2:compile
+[INFO] |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  +- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- com.google.api:gax:jar:2.65.0:compile
+[INFO] |  +- (com.google.auth:google-auth-library-credentials:jar:1.34.0:compile - omitted for conflict with 1.35.0)
+[INFO] |  +- com.google.protobuf:protobuf-java-util:jar:3.25.5:compile
+[INFO] |  +- io.opencensus:opencensus-api:jar:0.31.1:compile
+[INFO] |  +- io.grpc:grpc-context:jar:1.70.0:compile
+[INFO] |  +- (com.google.auth:google-auth-library-oauth2-http:jar:1.34.0:compile - omitted for conflict with 1.35.0)
+[INFO] |  +- com.google.api:gax-grpc:jar:2.65.0:compile
+[INFO] |  +- io.grpc:grpc-inprocess:jar:1.70.0:compile
+[INFO] |  +- io.grpc:grpc-core:jar:1.70.0:compile
+[INFO] |  +- com.google.android:annotations:jar:4.1.1.4:runtime
+[INFO] |  +- io.grpc:grpc-alts:jar:1.70.0:compile
+[INFO] |  +- io.grpc:grpc-grpclb:jar:1.70.0:compile
+[INFO] |  +- org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile
+[INFO] |  +- io.grpc:grpc-auth:jar:1.70.0:compile
+[INFO] |  +- io.grpc:grpc-netty-shaded:jar:1.70.0:compile
+[INFO] |  +- io.grpc:grpc-util:jar:1.70.0:runtime
+[INFO] |  +- io.perfmark:perfmark-api:jar:0.27.0:runtime
+[INFO] |  +- io.grpc:grpc-googleapis:jar:1.70.0:runtime
+[INFO] |  +- io.grpc:grpc-xds:jar:1.70.0:runtime
+[INFO] |  +- io.grpc:grpc-services:jar:1.70.0:runtime
+[INFO] |  +- com.google.re2j:re2j:jar:1.7:runtime
+[INFO] |  +- com.google.api:gax-httpjson:jar:2.65.0:compile
+[INFO] |  +- (com.google.code.gson:gson:jar:2.11.0:compile - version managed from 2.12.1; omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client:jar:1.46.3:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (org.apache.httpcomponents:httpclient:jar:4.5.14:compile - omitted for conflict with 4.5.13)
+[INFO] |  +- (commons-codec:commons-codec:jar:1.17.2:compile - version managed from 1.18.0; omitted for duplicate)
+[INFO] |  +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.16; omitted for duplicate)
+[INFO] |  +- io.opencensus:opencensus-contrib-http-util:jar:0.31.1:compile
+[INFO] |  +- (com.google.http-client:google-http-client-gson:jar:1.46.3:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- com.google.api.grpc:grpc-google-common-protos:jar:2.56.0:compile
+[INFO] |  +- com.google.api.grpc:proto-google-iam-v1:jar:1.51.0:compile
+[INFO] |  +- com.google.api.grpc:grpc-google-iam-v1:jar:1.51.0:compile
+[INFO] |  \- org.threeten:threetenbp:jar:1.7.0:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile
+[INFO] +- com.google.http-client:google-http-client-jackson2:jar:1.43.3:compile
+[INFO] |  +- (com.google.http-client:google-http-client:jar:1.43.3:compile - omitted for conflict with 1.42.3)
+[INFO] |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.14.2; omitted for duplicate)
+[INFO] +- com.google.cloud:google-cloud-speech:jar:4.58.0:compile
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-speech-v1p1beta1:jar:2.58.0:compile
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  \- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-speech-v2:jar:4.58.0:compile
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  \- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (com.google.api.grpc:proto-google-iam-v1:jar:1.52.0:compile - omitted for conflict with 1.51.0)
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-speech-v1:jar:4.58.0:compile
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  \- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (com.google.api:api-common:jar:2.49.0:compile - omitted for conflict with 2.48.0)
+[INFO] |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.guava:guava:jar:33.4.0-jre:compile - omitted for conflict with 31.1-jre)
+[INFO] |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  +- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (io.grpc:grpc-api:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-stub:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (org.codehaus.mojo:animal-sniffer-annotations:jar:1.24:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-protobuf:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-protobuf-lite:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.protobuf:protobuf-java:jar:3.25.5:compile - omitted for duplicate)
+[INFO] |  +- (com.google.api.grpc:proto-google-common-protos:jar:2.57.0:compile - omitted for conflict with 2.56.0)
+[INFO] |  +- (com.google.api:gax:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (com.google.auth:google-auth-library-credentials:jar:1.35.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.protobuf:protobuf-java-util:jar:3.25.5:compile - omitted for duplicate)
+[INFO] |  +- (io.opencensus:opencensus-api:jar:0.31.1:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-context:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.auth:google-auth-library-oauth2-http:jar:1.35.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.api:gax-grpc:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (io.grpc:grpc-inprocess:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-core:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.android:annotations:jar:4.1.1.4:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-alts:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-grpclb:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-auth:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-netty-shaded:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-util:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.perfmark:perfmark-api:jar:0.27.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-googleapis:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-xds:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-services:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.re2j:re2j:jar:1.7:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.api:gax-httpjson:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (com.google.code.gson:gson:jar:2.11.0:compile - version managed from 2.12.1; omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (org.apache.httpcomponents:httpclient:jar:4.5.14:compile - omitted for conflict with 4.5.13)
+[INFO] |  +- (commons-codec:commons-codec:jar:1.17.2:compile - version managed from 1.18.0; omitted for duplicate)
+[INFO] |  +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.16; omitted for duplicate)
+[INFO] |  +- (io.opencensus:opencensus-contrib-http-util:jar:0.31.1:compile - omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client-gson:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  \- (org.threeten:threetenbp:jar:1.7.0:compile - omitted for duplicate)
+[INFO] +- com.google.cloud:google-cloud-translate:jar:2.63.0:compile
+[INFO] |  +- (io.grpc:grpc-api:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  +- (io.grpc:grpc-stub:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (org.codehaus.mojo:animal-sniffer-annotations:jar:1.24:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-protobuf:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-protobuf-lite:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.api:api-common:jar:2.49.0:compile - omitted for conflict with 2.48.0)
+[INFO] |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.protobuf:protobuf-java:jar:3.25.5:compile - omitted for duplicate)
+[INFO] |  +- (com.google.api.grpc:proto-google-common-protos:jar:2.57.0:compile - omitted for conflict with 2.56.0)
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-translate-v3beta1:jar:0.145.0:compile
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  \- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- com.google.api.grpc:proto-google-cloud-translate-v3:jar:2.63.0:compile
+[INFO] |  |  +- (com.google.auto.value:auto-value-annotations:jar:1.11.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (javax.annotation:javax.annotation-api:jar:1.3.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.errorprone:error_prone_annotations:jar:2.38.0:compile - omitted for conflict with 2.37.0)
+[INFO] |  |  +- (com.google.j2objc:j2objc-annotations:jar:3.0.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  |  \- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (com.google.guava:guava:jar:33.4.0-jre:compile - omitted for conflict with 31.1-jre)
+[INFO] |  +- (com.google.guava:failureaccess:jar:1.0.2:compile - omitted for duplicate)
+[INFO] |  +- (com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile - omitted for duplicate)
+[INFO] |  +- (org.checkerframework:checker-qual:jar:3.49.0:compile - omitted for conflict with 3.48.3)
+[INFO] |  +- (com.google.api:gax:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (com.google.protobuf:protobuf-java-util:jar:3.25.5:compile - omitted for duplicate)
+[INFO] |  +- (io.opencensus:opencensus-api:jar:0.31.1:compile - omitted for duplicate)
+[INFO] |  +- (com.google.api:gax-grpc:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (io.grpc:grpc-inprocess:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-core:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.android:annotations:jar:4.1.1.4:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-alts:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-grpclb:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (org.conscrypt:conscrypt-openjdk-uber:jar:2.5.2:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-auth:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-netty-shaded:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-util:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.perfmark:perfmark-api:jar:0.27.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-googleapis:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-xds:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-services:jar:1.70.0:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.re2j:re2j:jar:1.7:runtime - omitted for duplicate)
+[INFO] |  +- (com.google.api:gax-httpjson:jar:2.66.0:compile - omitted for conflict with 2.65.0)
+[INFO] |  +- (com.google.code.gson:gson:jar:2.11.0:compile - version managed from 2.12.1; omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client-gson:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (org.threeten:threetenbp:jar:1.7.0:compile - omitted for duplicate)
+[INFO] |  +- com.google.cloud:google-cloud-core:jar:2.56.0:compile
+[INFO] |  +- (com.google.api.grpc:proto-google-iam-v1:jar:1.52.0:compile - omitted for conflict with 1.51.0)
+[INFO] |  +- com.google.cloud:google-cloud-core-http:jar:2.56.0:compile
+[INFO] |  +- (com.google.api-client:google-api-client:jar:2.7.2:compile - omitted for conflict with 2.2.0)
+[INFO] |  +- (commons-codec:commons-codec:jar:1.17.2:compile - version managed from 1.18.0; omitted for duplicate)
+[INFO] |  +- (com.google.oauth-client:google-oauth-client:jar:1.37.0:compile - omitted for conflict with 1.34.1)
+[INFO] |  +- (com.google.http-client:google-http-client-apache-v2:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- com.google.http-client:google-http-client-appengine:jar:1.47.0:compile
+[INFO] |  +- (io.opencensus:opencensus-contrib-http-util:jar:0.31.1:compile - omitted for duplicate)
+[INFO] |  +- com.google.apis:google-api-services-translate:jar:v2-rev20170525-2.0.0:compile
+[INFO] |  +- (com.google.auth:google-auth-library-credentials:jar:1.35.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.auth:google-auth-library-oauth2-http:jar:1.35.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client:jar:1.47.0:compile - omitted for conflict with 1.42.3)
+[INFO] |  +- (org.apache.httpcomponents:httpclient:jar:4.5.14:compile - omitted for conflict with 4.5.13)
+[INFO] |  +- (org.apache.httpcomponents:httpcore:jar:4.4.16:compile - version managed from 4.4.16; omitted for duplicate)
+[INFO] |  +- (io.grpc:grpc-context:jar:1.70.0:compile - omitted for duplicate)
+[INFO] |  +- (com.google.http-client:google-http-client-jackson2:jar:1.47.0:compile - omitted for conflict with 1.43.3)
+[INFO] |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] +- com.theokanning.openai-gpt3-java:service:jar:0.18.2:compile
+[INFO] |  +- com.theokanning.openai-gpt3-java:client:jar:0.18.2:compile
+[INFO] |  |  +- com.theokanning.openai-gpt3-java:api:jar:0.18.2:compile
+[INFO] |  |  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.18.2:compile - version managed from 2.14.2; omitted for duplicate)
+[INFO] |  |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.14.2; omitted for duplicate)
+[INFO] |  |  |  \- com.knuddels:jtokkit:jar:0.5.1:compile
+[INFO] |  |  +- (com.squareup.retrofit2:retrofit:jar:2.9.0:compile - omitted for duplicate)
+[INFO] |  |  +- (com.squareup.retrofit2:adapter-rxjava2:jar:2.9.0:compile - omitted for duplicate)
+[INFO] |  |  \- (com.squareup.retrofit2:converter-jackson:jar:2.9.0:runtime - omitted for duplicate)
+[INFO] |  +- com.squareup.retrofit2:retrofit:jar:2.9.0:compile (scope not updated to compile)
+[INFO] |  |  \- com.squareup.okhttp3:okhttp:jar:3.14.9:compile
+[INFO] |  |     \- com.squareup.okio:okio:jar:1.17.2:compile
+[INFO] |  +- com.squareup.retrofit2:adapter-rxjava2:jar:2.9.0:compile (scope not updated to compile)
+[INFO] |  |  +- (com.squareup.retrofit2:retrofit:jar:2.9.0:compile - omitted for duplicate)
+[INFO] |  |  +- io.reactivex.rxjava2:rxjava:jar:2.0.0:compile
+[INFO] |  |  |  \- (org.reactivestreams:reactive-streams:jar:1.0.4:runtime - version managed from 1.0.0; omitted for duplicate)
+[INFO] |  |  \- org.reactivestreams:reactive-streams:jar:1.0.4:compile (version managed from 1.0.3; scope not updated to compile)
+[INFO] |  +- com.squareup.retrofit2:converter-jackson:jar:2.9.0:runtime
+[INFO] |  |  +- (com.squareup.retrofit2:retrofit:jar:2.9.0:runtime - omitted for duplicate)
+[INFO] |  |  \- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:runtime - version managed from 2.10.1; omitted for duplicate)
+[INFO] |  \- com.kjetland:mbknor-jackson-jsonschema_2.12:jar:1.0.34:runtime
+[INFO] |     +- org.scala-lang:scala-library:jar:2.12.8:runtime
+[INFO] |     +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:runtime - version managed from 2.9.8; omitted for duplicate)
+[INFO] |     +- javax.validation:validation-api:jar:2.0.1.Final:runtime
+[INFO] |     +- (org.slf4j:slf4j-api:jar:2.0.16:runtime - version managed from 1.7.26; omitted for duplicate)
+[INFO] |     \- io.github.classgraph:classgraph:jar:4.8.21:runtime
+[INFO] +- com.amazonaws:aws-java-sdk-s3:jar:1.12.147:compile
+[INFO] |  +- com.amazonaws:aws-java-sdk-kms:jar:1.12.147:compile
+[INFO] |  |  +- (com.amazonaws:aws-java-sdk-core:jar:1.12.147:compile - omitted for duplicate)
+[INFO] |  |  \- (com.amazonaws:jmespath-java:jar:1.12.147:compile - omitted for duplicate)
+[INFO] |  +- com.amazonaws:aws-java-sdk-core:jar:1.12.147:compile
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.1.3:compile - omitted for conflict with 1.2)
+[INFO] |  |  +- (commons-codec:commons-codec:jar:1.17.2:compile - version managed from 1.15; omitted for duplicate)
+[INFO] |  |  +- (org.apache.httpcomponents:httpclient:jar:4.5.13:compile - omitted for duplicate)
+[INFO] |  |  +- software.amazon.ion:ion-java:jar:1.0.2:compile
+[INFO] |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.12.3; omitted for duplicate)
+[INFO] |  |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar:2.18.2:compile (version managed from 2.12.3)
+[INFO] |  |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.18.2:compile - version managed from 2.18.2; omitted for duplicate)
+[INFO] |  |  \- joda-time:joda-time:jar:2.8.1:compile
+[INFO] |  \- com.amazonaws:jmespath-java:jar:1.12.147:compile
+[INFO] |     \- (com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile - version managed from 2.12.3; omitted for duplicate)
+[INFO] \- org.springframework.boot:spring-boot-starter-mail:jar:3.4.3:compile
+[INFO]    +- (org.springframework.boot:spring-boot-starter:jar:3.4.3:compile - version managed from 3.4.3; omitted for duplicate)
+[INFO]    +- org.springframework:spring-context-support:jar:6.2.3:compile (version managed from 6.2.3)
+[INFO]    |  +- (org.springframework:spring-beans:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO]    |  +- (org.springframework:spring-context:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO]    |  \- (org.springframework:spring-core:jar:6.2.3:compile - version managed from 6.2.3; omitted for duplicate)
+[INFO]    \- org.eclipse.angus:jakarta.mail:jar:2.0.3:compile (version managed from 2.0.3)
+[INFO]       +- (jakarta.activation:jakarta.activation-api:jar:2.1.3:compile - version managed from 2.1.3; omitted for duplicate)
+[INFO]       \- org.eclipse.angus:angus-activation:jar:2.0.2:runtime (version managed from 2.0.2)
+[INFO]          \- (jakarta.activation:jakarta.activation-api:jar:2.1.3:runtime - version managed from 2.1.3; omitted for duplicate)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.971 s
+[INFO] Finished at: 2025-07-20T14:54:13+05:30
+[INFO] ------------------------------------------------------------------------

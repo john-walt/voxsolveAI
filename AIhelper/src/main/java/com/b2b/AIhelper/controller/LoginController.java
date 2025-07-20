@@ -41,10 +41,9 @@ public class LoginController {
 	private EmailService emailService;
 	@Autowired
 	private GoogleTokenVerifierService tokenVerifier;
-	
+
 	@Autowired
 	private JwtUtil jwtUtil;
-
 
 //	    private final JwtUtil jwtUtil = new JwtUtil();
 //	    private final Map<String, String> userCredentials = Map.of("user", "password");  // Just for demo
@@ -71,6 +70,10 @@ public class LoginController {
 		User user = userOptional.get();
 		Map<String, Object> data = new HashMap<>();
 		data.put("userid", user.getId());
+		data.put("user_name", user.getName());
+		data.put("accessToken", jwtUtil.generateAccessToken(email));
+	    data.put("refreshToken", jwtUtil.generateRefreshToken(email));
+
 
 		// Validate password
 		if (!passwordEncoder.matches(password, user.getPassword())) {
@@ -78,11 +81,7 @@ public class LoginController {
 			return new ResponseEntity<>(responseDTO, HttpStatus.UNAUTHORIZED);
 		}
 
-		ResponseDTO responseDTO = new ResponseDTO(200, "Login successful", Map.of(
-			    "userid", user.getId(),
-			    "accessToken", jwtUtil.generateAccessToken(email),
-			    "refreshToken", jwtUtil.generateRefreshToken(email)
-			));
+		ResponseDTO responseDTO = new ResponseDTO(200, "Login successful", data);
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 	}
 
@@ -114,37 +113,37 @@ public class LoginController {
 		User newU = new User();
 		System.out.println("password : " + password);
 		try {
-		// After generating OTP
-		emailService.sendOtpEmail(email, otp);
-		}
-		catch(Exception e) {
+			// After generating OTP
+			emailService.sendOtpEmail(email, otp);
+		} catch (Exception e) {
 			Map<String, Object> data = new HashMap<>();
 
 			ResponseDTO responseDTO = new ResponseDTO(405, "Invalid mail id. Please try again", data);
 			return new ResponseEntity<>(responseDTO, HttpStatus.METHOD_NOT_ALLOWED);
 		}
 		try {
-			User newUser = new User(generateRandom10DigitValue(), email, passwordEncoder.encode(password), hashedOtp, name);
+			User newUser = new User(generateRandom10DigitValue(), email, passwordEncoder.encode(password), hashedOtp,
+					name);
 			newU = userRepository.save(newUser);
-		}
-		catch(Exception e) {
-			if(e.getMessage().contains("duplicate key")) {
+		} catch (Exception e) {
+			if (e.getMessage().contains("duplicate key")) {
 				Map<String, Object> data = new HashMap<>();
 
-				ResponseDTO responseDTO = new ResponseDTO(409, "Mobile number has been already registered. Please login using the same.", data);
+				ResponseDTO responseDTO = new ResponseDTO(409,
+						"Mobile number has been already registered. Please login using the same.", data);
 				return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
 			}
 		}
 
 		// Wrap OTP inside an object
-		   // Generate JWT tokens after saving the user
-        String accessToken = jwtUtil.generateAccessToken(email);
-        String refreshToken = jwtUtil.generateRefreshToken(email);
+		// Generate JWT tokens after saving the user
+		String accessToken = jwtUtil.generateAccessToken(email);
+		String refreshToken = jwtUtil.generateRefreshToken(email);
 		Map<String, Object> data = new HashMap<>();
-		data.put("user id",newU.getId());
-		data.put("user name",newU.getName());
+		data.put("user_id", newU.getId());
+		data.put("user_name", newU.getName());
 		data.put("accessToken", accessToken);
-	    data.put("refreshToken", refreshToken);
+		data.put("refreshToken", refreshToken);
 		ResponseDTO responseDTO = new ResponseDTO(200, "OTP generated successfully", data);
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 	}
@@ -163,7 +162,7 @@ public class LoginController {
 //        }
 
 		// Check if user already exist
-		
+
 		Optional<User> user = userRepository.findByEmail(email);
 		if (user.isPresent() && verifyOtp(otp, user.get().getOtp())) {
 			ResponseDTO responseDTO = new ResponseDTO(200, "OTP verified successfully", null);
@@ -180,13 +179,13 @@ public class LoginController {
 		int otp = 100000 + random.nextInt(900000);
 		return String.valueOf(otp);
 	}
-	
+
 	private String generateRandom10DigitValue() {
-	    Random random = new Random();
-	    long min = 1_000_000_000L; // smallest 10-digit number
-	    long max = 9_999_999_999L; // largest 10-digit number
-	    long number = min + ((long)(random.nextDouble() * (max - min)));
-	    return String.valueOf(number);
+		Random random = new Random();
+		long min = 1_000_000_000L; // smallest 10-digit number
+		long max = 9_999_999_999L; // largest 10-digit number
+		long number = min + ((long) (random.nextDouble() * (max - min)));
+		return String.valueOf(number);
 	}
 
 	@PostMapping("/google")
@@ -229,23 +228,21 @@ public class LoginController {
 	public boolean verifyOtp(String rawOtp, String hashedOtp) {
 		return passwordEncoder.matches(rawOtp, hashedOtp);
 	}
-	
+
 	@Operation(summary = "Refresh access token using refresh token")
 	@CrossOrigin(origins = "*")
 	@PostMapping("/refresh")
 	public ResponseEntity<?> refreshAccessToken(@RequestBody TokenRequest request) {
-	    String refreshToken = request.getIdToken(); // reuse model for simplicity
+		String refreshToken = request.getIdToken(); // reuse model for simplicity
 
-	    if (!jwtUtil.validateToken(refreshToken)) {
-	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid refresh token");
-	    }
+		if (!jwtUtil.validateToken(refreshToken)) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid refresh token");
+		}
 
-	    String email = jwtUtil.getEmailFromToken(refreshToken);
-	    String newAccessToken = jwtUtil.generateAccessToken(email);
+		String email = jwtUtil.getEmailFromToken(refreshToken);
+		String newAccessToken = jwtUtil.generateAccessToken(email);
 
-	    return ResponseEntity.ok(Map.of(
-	        "accessToken", newAccessToken
-	    ));
+		return ResponseEntity.ok(Map.of("accessToken", newAccessToken));
 	}
 
 }

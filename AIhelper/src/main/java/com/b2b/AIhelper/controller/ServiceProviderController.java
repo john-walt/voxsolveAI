@@ -13,9 +13,17 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
+
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import org.springframework.security.access.AccessDeniedException;
+
+
 
 //@CrossOrigin(origins = "https://0d97-2406-8800-9014-d2a-b97e-a843-7557-a5e1.ngrok-free.app")
 @RestController
@@ -94,4 +102,16 @@ public class ServiceProviderController {
         ResponseDTO responseDTO = new ResponseDTO(200, "Service requests fetched successfully", mapData);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
+//    
+//    @Operation(
+//    	    summary = "Force 403 response for documentation",
+//    	    responses = {
+//    	        @ApiResponse(responseCode = "403", description = "Access denied",
+//    	            content = @Content(schema = @Schema(implementation = ResponseDTO.class)))
+//    	    }
+//    	)
+//    	@GetMapping("/_docs/403")
+//    	public void force403() {
+//    	    throw new AccessDeniedException("This is a simulated 403");
+//    	}
 }

@@ -1,23 +1,25 @@
 package com.b2b.AIhelper.models;
 
-import java.util.Map;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
+@Schema(description = "Standard API response")
 public class ResponseDTO {
-    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
-    private Integer status_code;
-    private String message;
-    private Map<String, Object> data;
 
-    // Constructor
-    public ResponseDTO(Integer status_code, String message, Map<String, Object> data) {
+    @Schema(example = "200", description = "Status code of the response")
+    private Integer status_code;
+
+    @Schema(example = "Success", description = "Descriptive message")
+    private String message;
+
+    @Schema(description = "Returned data (any object)")
+    private Object data;
+    public ResponseDTO(Integer status_code, String message, Object data) {
         this.status_code = status_code;
         this.message = message;
         this.data = data;
     }
 
-    // Getters and Setters
+    // Getters and setters
     public Integer getStatus_code() {
         return status_code;
     }
@@ -34,11 +36,11 @@ public class ResponseDTO {
         this.message = message;
     }
 
-    public Map<String, Object> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(Map<String, Object> data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }
