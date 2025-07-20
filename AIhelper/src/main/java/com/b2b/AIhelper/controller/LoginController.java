@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.b2b.AIhelper.entity.User;
 import com.b2b.AIhelper.models.LoginRequest;
 import com.b2b.AIhelper.models.OtpRequest;
+import com.b2b.AIhelper.models.PasswordChangeRequest;
+import com.b2b.AIhelper.models.ResendOtpRequest;
 import com.b2b.AIhelper.models.ResponseDTO;
 import com.b2b.AIhelper.models.SignupRequest;
 import com.b2b.AIhelper.models.TokenRequest;
@@ -72,8 +74,7 @@ public class LoginController {
 		data.put("userid", user.getId());
 		data.put("user_name", user.getName());
 		data.put("accessToken", jwtUtil.generateAccessToken(email));
-	    data.put("refreshToken", jwtUtil.generateRefreshToken(email));
-
+		data.put("refreshToken", jwtUtil.generateRefreshToken(email));
 
 		// Validate password
 		if (!passwordEncoder.matches(password, user.getPassword())) {
@@ -122,8 +123,8 @@ public class LoginController {
 			return new ResponseEntity<>(responseDTO, HttpStatus.METHOD_NOT_ALLOWED);
 		}
 		try {
-			User newUser = new User(phoneNumber.isEmpty()? generateRandom10DigitValue():phoneNumber, email, passwordEncoder.encode(password), hashedOtp,
-					name);
+			User newUser = new User(phoneNumber.isEmpty() ? generateRandom10DigitValue() : phoneNumber, email,
+					passwordEncoder.encode(password), hashedOtp, name);
 			newU = userRepository.save(newUser);
 		} catch (Exception e) {
 			if (e.getMessage().contains("duplicate key")) {
@@ -148,6 +149,64 @@ public class LoginController {
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 	}
 
+	@Operation(summary = "Resend the otp", description = "Resends the otp to the mail id")
+	@CrossOrigin(origins = "*")
+	@PostMapping("/resendOtp")
+	public ResponseEntity<ResponseDTO> resendOtp(@RequestBody ResendOtpRequest request) {
+		String email = request.getEmail();
+
+		// Validate phone number
+//        if (phoneNumber == null || phoneNumber.length() != 10) {
+//        	ResponseDTO responseDTO = new ResponseDTO(500, "Invalid phone number", null);
+//            return new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+//            
+//        }
+
+		// Check if user already exists
+
+		// Save user details to database with hashed password
+		String otp = generateRandomOTP();
+		String hashedOtp = hashOtp(otp);
+		try {
+			// After generating OTP
+			emailService.sendOtpEmail(email, otp);
+		} catch (Exception e) {
+			Map<String, Object> data = new HashMap<>();
+			ResponseDTO responseDTO = new ResponseDTO(405, "Invalid mail id. Please try again", data);
+			return new ResponseEntity<>(responseDTO, HttpStatus.METHOD_NOT_ALLOWED);
+		}
+		try {
+			userRepository.updateOtpByEmail(email, hashedOtp);
+		} catch (Exception e) {
+			ResponseDTO responseDTO = new ResponseDTO(409,
+					"Mobile number has been already registered. Please login using the same.", null);
+			return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
+		}
+
+		Map<String, Object> data = new HashMap<>();
+		ResponseDTO responseDTO = new ResponseDTO(200, "OTP generated successfully", data);
+		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+	}
+
+	@Operation(summary = "change the password", description = "Change the password")
+	@CrossOrigin(origins = "*")
+	@PostMapping("/changePassword")
+	public ResponseEntity<ResponseDTO> changePassword(@RequestBody PasswordChangeRequest request) {
+		String email = request.getEmail();
+		String password = request.getPassword();
+		if (userRepository.findByEmail(email).isPresent()) {
+			userRepository.updatePasswordByEmail(email, password);
+		}
+		else {
+			ResponseDTO responseDTO = new ResponseDTO(409, "User does not exist", null);
+			return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
+		}
+
+		Map<String, Object> data = new HashMap<>();
+		ResponseDTO responseDTO = new ResponseDTO(200, "password updated successfully", null);
+		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+	}
+	
 	@Operation(summary = "verification of the OTP send to mail ", description = "Returns true if OTP send to mail is verified")
 	@CrossOrigin(origins = "*")
 	@PostMapping("/getotp")
