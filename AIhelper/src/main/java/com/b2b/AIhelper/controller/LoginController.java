@@ -224,6 +224,8 @@ public class LoginController {
 			String accessToken = jwtUtil.generateAccessToken(email);
 			String refreshToken = jwtUtil.generateRefreshToken(email);
 			Map<String, Object> data = new HashMap<>();
+			data.put("user_id", user.get().getId());
+			data.put("user_name", user.get().getName());			
 			data.put("accessToken", accessToken);
 			data.put("refreshToken", refreshToken);
 			ResponseDTO responseDTO = new ResponseDTO(200, "OTP verified successfully", data);
