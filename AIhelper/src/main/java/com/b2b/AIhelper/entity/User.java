@@ -13,13 +13,13 @@ public class User {
 	@Id
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "id", updatable = false, nullable = false)
+	@Column(name = "id", updatable = true, nullable = false)
     private UUID id;
 
     @Column(unique = false)
     private String phoneNumber;
 
-    @Column(unique = false, nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)

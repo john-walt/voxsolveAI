@@ -90,60 +90,47 @@ public class LoginController {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/signup")
 	public ResponseEntity<ResponseDTO> signup(@RequestBody SignupRequest request) {
-		String phoneNumber = request.getPhoneNumber();
-		String email = request.getEmail();
-		String password = request.getPassword();
-		String name = request.getName();
+	    String phoneNumber = request.getPhoneNumber();
+	    String email = request.getEmail();
+	    String password = request.getPassword();
+	    String name = request.getName();
 
-		// Validate phone number
-//        if (phoneNumber == null || phoneNumber.length() != 10) {
-//        	ResponseDTO responseDTO = new ResponseDTO(500, "Invalid phone number", null);
-//            return new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
-//            
-//        }
+	    String otp = generateRandomOTP();
+	    String hashedOtp = hashOtp(otp);
 
-		// Check if user already exists
-//		if (userRepository.findByEmail(email).isPresent()) {
-//			ResponseDTO responseDTO = new ResponseDTO(409, "User already exists", null);
-//			return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
-//		}
+	    try {
+	        emailService.sendOtpEmail(email, otp);
+	    } catch (Exception e) {
+	        return new ResponseEntity<>(
+	                new ResponseDTO(405, "Invalid mail id. Please try again", null),
+	                HttpStatus.METHOD_NOT_ALLOWED);
+	    }
 
-		// Save user details to database with hashed password
-		String otp = generateRandomOTP();
-		String hashedOtp = hashOtp(otp);
-		User newU = new User();
-		System.out.println("password : " + password);
-		try {
-			// After generating OTP
-			emailService.sendOtpEmail(email, otp);
-		} catch (Exception e) {
-			Map<String, Object> data = new HashMap<>();
+	    Optional<User> existingUserOpt = userRepository.findByEmail(email);
+	    User user;
+	    
+	    if (existingUserOpt.isPresent()) {
+	        // Update OTP only
+	        user = existingUserOpt.get();
+	        user.setOtp(hashedOtp);
+	        if(password!=null && !password.isEmpty()) {
+	        	 user.setPassword(password);
+	        }
+	        userRepository.save(user);  // update
+	    } else {
+	        // Create new user
+	        String finalPhoneNumber = phoneNumber == null || phoneNumber.isEmpty()
+	                ? generateRandom10DigitValue()
+	                : phoneNumber;
 
-			ResponseDTO responseDTO = new ResponseDTO(405, "Invalid mail id. Please try again", data);
-			return new ResponseEntity<>(responseDTO, HttpStatus.METHOD_NOT_ALLOWED);
-		}
-		try {
-			User newUser = new User(phoneNumber.isEmpty() ? generateRandom10DigitValue() : phoneNumber, email,
-					passwordEncoder.encode(password), hashedOtp, name);
-			newU = userRepository.save(newUser);
-		} catch (Exception e) {
-			if (e.getMessage().contains("duplicate key")) {
-				Map<String, Object> data = new HashMap<>();
+	        user = new User(finalPhoneNumber, email, passwordEncoder.encode(password), hashedOtp, name);
+	        userRepository.save(user);
+	    }
 
-				ResponseDTO responseDTO = new ResponseDTO(409,
-						"Mobile number has been already registered. Please login using the same.", data);
-				return new ResponseEntity<>(responseDTO, HttpStatus.CONFLICT);
-			}
-		}
-
-		// Wrap OTP inside an object
-		// Generate JWT tokens after saving the user
-		
-		Map<String, Object> data = new HashMap<>();
-		data.put("user_id", newU.getId());
-		data.put("user_name", newU.getName());
-		ResponseDTO responseDTO = new ResponseDTO(200, "OTP generated successfully", data);
-		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+	    Map<String, Object> data = new HashMap<>();
+	    data.put("user_id", user.getId());
+	    data.put("user_name", user.getName());
+	    return new ResponseEntity<>(new ResponseDTO(200, "OTP generated successfully", data), HttpStatus.OK);
 	}
 
 	@Operation(summary = "Resend the otp", description = "Resends the otp to the mail id")
