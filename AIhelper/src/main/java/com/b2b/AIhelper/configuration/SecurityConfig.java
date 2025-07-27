@@ -38,7 +38,7 @@ public class SecurityConfig {
             .cors() // enable CORS using CorsConfigurationSource
             .and()
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/api/auth/login", "/audio/**", "/auth/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .requestMatchers("/api/auth/login", "/api/auth/getotp", "/audio/**", "/auth/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated()
             )
             .exceptionHandling(e -> e
