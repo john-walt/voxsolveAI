@@ -138,13 +138,10 @@ public class LoginController {
 
 		// Wrap OTP inside an object
 		// Generate JWT tokens after saving the user
-		String accessToken = jwtUtil.generateAccessToken(email);
-		String refreshToken = jwtUtil.generateRefreshToken(email);
+		
 		Map<String, Object> data = new HashMap<>();
 		data.put("user_id", newU.getId());
 		data.put("user_name", newU.getName());
-		data.put("accessToken", accessToken);
-		data.put("refreshToken", refreshToken);
 		ResponseDTO responseDTO = new ResponseDTO(200, "OTP generated successfully", data);
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 	}
@@ -224,7 +221,12 @@ public class LoginController {
 
 		Optional<User> user = userRepository.findByEmail(email);
 		if (user.isPresent() && verifyOtp(otp, user.get().getOtp())) {
-			ResponseDTO responseDTO = new ResponseDTO(200, "OTP verified successfully", null);
+			String accessToken = jwtUtil.generateAccessToken(email);
+			String refreshToken = jwtUtil.generateRefreshToken(email);
+			Map<String, Object> data = new HashMap<>();
+			data.put("accessToken", accessToken);
+			data.put("refreshToken", refreshToken);
+			ResponseDTO responseDTO = new ResponseDTO(200, "OTP verified successfully", data);
 			return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 		} else {
 			ResponseDTO responseDTO = new ResponseDTO(401, "invalid OTP", null);

@@ -38,6 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
+            System.out.println("Received Token: " + token);  // Debug log
 
             if (jwtUtil.validateToken(token)) {
                 String email = jwtUtil.getEmailFromToken(token);
@@ -45,13 +46,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 if (userOptional.isPresent()) {
                     UserDetails userDetails = new org.springframework.security.core.userdetails.User(
-                        userOptional.get().getEmail(), "", new ArrayList<>());
+                            userOptional.get().getEmail(), "", new ArrayList<>());
 
                     UsernamePasswordAuthenticationToken authentication =
                             new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
                     SecurityContextHolder.getContext().setAuthentication(authentication);
+                } else {
+                    System.out.println("User not found for email: " + email);  // Debug log
                 }
+            } else {
+                System.out.println("Token is invalid");  // Debug log
             }
         }
 

@@ -43,9 +43,8 @@ public class AudioInterpretController {
 
     @GetMapping("/process")
     public String processRemoteWav(
-            @RequestParam String audioUrl,
-            @RequestParam(required = false) String authToken) throws Exception {
-
+            @RequestParam String audioUrl) throws Exception {
+    	String authToken = null;
 //        Path wavFilePath = Paths.get("C:\\Users\\thoma\\Downloads\\wifi_not_wkring.wav");
         Path tempFile = downloadAudioToTemp(audioUrl, authToken);
 
@@ -97,7 +96,7 @@ public class AudioInterpretController {
         try (VertexAI vertexAI = new VertexAI(GCP_PROJECT_ID, GCP_LOCATION)) {
             GenerativeModel model = new GenerativeModel(GEMINI_MODEL, vertexAI);
             
-            String prompt = "Please summarize the following text in 2-3 concise English sentences and check in the public github excel file https://github.com/john-walt/voxsolveAI/blob/main/keralavision_test.xlsx if the similar issue is present in the Column A(Issue) and if yes give me only the Column B (Suggested fix) for the issue . If you think it does not have anything similar please send the response as - fix not found please proceed for manual fixing \n\n" 
+            String prompt = "Please summarize the following text in 2-3 concise English sentences and check in the public github excel file https://github.com/john-walt/voxsolveAI/blob/main/keralavision_test.xlsx the Column A has the Issue and Column B has the suggested fix for the issue. If you think it has the similar issue and fix , please respond in the manner - the summarized 2-3 lines and after a | the fix from the excel. If you think it does not have anything similar please respond in the manner - the summarized 2-3 lines and after a | fix not found please proceed for manual fixing \n\n"
             		
                            + englishText;
             
