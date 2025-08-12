@@ -145,6 +145,11 @@
     <artifactId>jackson-core</artifactId>
     <version>2.18.2</version>
 </dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20230227</version>
+</dependency>
 
 <dependency>
     <groupId>com.google.http-client</groupId>
@@ -177,6 +182,7 @@
         <artifactId>aws-java-sdk-s3</artifactId>
         <version>1.12.147</version>
     </dependency>
+    
 	<dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-mail</artifactId>

@@ -6,18 +6,15 @@ import java.util.UUID;
 import com.b2b.AIhelper.utils.RequestStatus;
 
 public class ServiceRequestBasicDTO {
-	private String category;
     private String requestorName;
     private String location;
-    private String issueDescription;
+    private String englishTranslation;
+    private String callInfoMalayalam;
+    private String issueSummary;
     private LocalDateTime requestDateTime;
+    private String audioUrl;
     private RequestStatus status;
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+	
 	public String getRequestorName() {
 		return requestorName;
 	}
@@ -30,12 +27,7 @@ public class ServiceRequestBasicDTO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getIssueDescription() {
-		return issueDescription;
-	}
-	public void setIssueDescription(String issueDescription) {
-		this.issueDescription = issueDescription;
-	}
+	
 	public LocalDateTime getRequestDateTime() {
 		return requestDateTime;
 	}
@@ -48,5 +40,29 @@ public class ServiceRequestBasicDTO {
 	public void setStatus(RequestStatus status) {
 		this.status = status;
 	}
-
+	public String getEnglishTranslation() {
+		return englishTranslation;
+	}
+	public void setEnglishTranslation(String englishTranslation) {
+		this.englishTranslation = englishTranslation;
+	}
+	public String getIssueSummary() {
+		return issueSummary;
+	}
+	public void setIssueSummary(String issueSummary) {
+		this.issueSummary = issueSummary;
+	}
+	public String getCallInfoMalayalam() {
+		return callInfoMalayalam;
+	}
+	public void setCallInfoMalayalam(String callInfoMalayalam) {
+		this.callInfoMalayalam = callInfoMalayalam;
+	}
+	public String getAudioUrl() {
+		return audioUrl;
+	}
+	public void setAudioUrl(String audioUrl) {
+		this.audioUrl = audioUrl;
+	}
+	
 }

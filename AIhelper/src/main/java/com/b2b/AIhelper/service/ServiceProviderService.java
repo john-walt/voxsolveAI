@@ -156,12 +156,14 @@ public class ServiceProviderService {
 
     private ServiceRequestBasicDTO convertToDTO(ServiceRequest request) {
     	ServiceRequestBasicDTO dto = new ServiceRequestBasicDTO();
-        dto.setCategory(request.getRequirementRelatedTo());
+        dto.setIssueSummary(request.getIssueSummary());
         dto.setRequestorName(request.getRequestorName());
-        dto.setLocation(request.getReceivedFrom());
-        dto.setIssueDescription(request.getCallInfoEnglish());
+        dto.setLocation(request.getLocation());
+        dto.setEnglishTranslation(request.getCallInfoEnglish());
         dto.setRequestDateTime(request.getRequestDateTime());
         dto.setStatus(request.getStatus());
+        dto.setCallInfoMalayalam(request.getCallInfoMalayalam());
+        dto.setAudioUrl(request.getAudioUrl());
         return dto;
     }
 }

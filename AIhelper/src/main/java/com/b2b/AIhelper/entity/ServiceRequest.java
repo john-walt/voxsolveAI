@@ -7,6 +7,8 @@ import com.b2b.AIhelper.utils.RequestStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import java.util.HashSet;
+import java.util.Set;
 @Entity
 @Table(name = "service_request")
 public class ServiceRequest {
@@ -24,7 +26,9 @@ public class ServiceRequest {
 
     private String requestorName;
 
-    private String receivedFrom;
+    private String customerWhatsappNumber;
+
+    private String customerDialledNumber;
 
     @Column(length = 5000) // Large text, but avoid @Lob to prevent oid
     private String callInfoMalayalam;
@@ -36,9 +40,6 @@ public class ServiceRequest {
     private Priority priority;
 
     private Boolean autoTroubleShootingTipsShared;
-
-    @Column(length = 2000)
-    private String requirementRelatedTo;
 
     @Enumerated(EnumType.STRING)
     private AllocationStatus allocationStatus;
@@ -59,6 +60,24 @@ public class ServiceRequest {
 
     @Column(length = 2000)
     private String approvalNotes;
+    
+    private Boolean verify;
+    
+    private String audioUrl;
+    
+    private String location;
+
+    @Column(length = 2000)
+    private String issueSummary;
+    
+    @ManyToMany
+    @JoinTable(name = "service_request_address",
+            joinColumns = @JoinColumn(name = "service_request_id"),
+            inverseJoinColumns = @JoinColumn(name = "address_id"))
+    private Set<Address> addresses = new HashSet<>();
+
+    // Getters and Setters
+    
 
 	public Long getId() {
 		return id;
@@ -100,12 +119,20 @@ public class ServiceRequest {
 		this.requestorName = requestorName;
 	}
 
-	public String getReceivedFrom() {
-		return receivedFrom;
+	public String getCustomerWhatsappNumber() {
+		return customerWhatsappNumber;
 	}
 
-	public void setReceivedFrom(String receivedFrom) {
-		this.receivedFrom = receivedFrom;
+	public void setCustomerWhatsappNumber(String customerWhatsappNumber) {
+		this.customerWhatsappNumber = customerWhatsappNumber;
+	}
+
+	public String getCustomerDialledNumber() {
+		return customerDialledNumber;
+	}
+
+	public void setCustomerDialledNumber(String customerDialledNumber) {
+		this.customerDialledNumber = customerDialledNumber;
 	}
 
 	public String getCallInfoMalayalam() {
@@ -138,14 +165,6 @@ public class ServiceRequest {
 
 	public void setAutoTroubleShootingTipsShared(Boolean autoTroubleShootingTipsShared) {
 		this.autoTroubleShootingTipsShared = autoTroubleShootingTipsShared;
-	}
-
-	public String getRequirementRelatedTo() {
-		return requirementRelatedTo;
-	}
-
-	public void setRequirementRelatedTo(String requirementRelatedTo) {
-		this.requirementRelatedTo = requirementRelatedTo;
 	}
 
 	public AllocationStatus getAllocationStatus() {
@@ -212,5 +231,48 @@ public class ServiceRequest {
 		this.approvalNotes = approvalNotes;
 	}
 
-    // Getters and Setters
+	public Boolean getVerify() {
+		return verify;
+	}
+
+	public void setVerify(Boolean verify) {
+		this.verify = verify;
+	}
+
+	public String getAudioUrl() {
+		return audioUrl;
+	}
+
+	public void setAudioUrl(String audioUrl) {
+		this.audioUrl = audioUrl;
+	}
+
+	
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getIssueSummary() {
+		return issueSummary;
+	}
+
+	public void setIssueSummary(String issueSummary) {
+		this.issueSummary = issueSummary;
+	}
+
+	public Set<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(Set<Address> addresses) {
+		this.addresses = addresses;
+	}
+	
+	
 }
+
