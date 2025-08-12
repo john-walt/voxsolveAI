@@ -132,7 +132,7 @@ public class AudioInterpretController {
 				+ "The provided data is in CSV format, with the first row being headers.\n"
 				+ "Give me the response in ONLY one of the following formats:\n"
 				+ "1. In case a similar issue (>= 70% match) is found:\n"
-				+ "   `[Summarized 2-3 lines of the issue] | [Exact values provided in the 'suggested fix' column in the excel provided]`\n"
+				+ "   `[Summarized 2-3 lines of the issue] | [Exact values provided in the 'suggested fix' column in the excel provided for the issue found]`\n"
 				+ "2. in case no similar issue (< 70% match) is found:\n"
 				+ "   `[Summarized 2-3 lines of the issue] | fix not found, please proceed for manual fixing.`\n\n"
 				+ "**PROVIDED DATA (CSV FORMAT):**\n. Please do not provide the breakdown, translation or anything else. only provide the response in 1. or 2. format pls"
