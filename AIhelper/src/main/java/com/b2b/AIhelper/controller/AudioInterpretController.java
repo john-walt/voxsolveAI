@@ -370,7 +370,7 @@ public class AudioInterpretController {
 
 		// Hugging Face model URL
 		String apiUrl = "https://api-inference.huggingface.co/models/openai/whisper-large-v3";
-		String hfToken = "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"; // Replace with your Hugging Face token
+		String hfToken = ""; // Replace with your Hugging Face token
 
 		// Create HTTP connection
 		HttpURLConnection conn = (HttpURLConnection) new URL(apiUrl).openConnection();
