@@ -346,7 +346,7 @@ public class AudioInterpretController {
 			}
 		};
 		factory.setConnectTimeout(30_000);
-		factory.setReadTimeout(120_000);
+		factory.setReadTimeout(120_000); 
 		return new RestTemplate(factory);
 	}
 
