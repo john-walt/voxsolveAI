@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class ServiceProviderService {
@@ -147,9 +151,10 @@ public class ServiceProviderService {
         return "Proficiency and skills have been successfully saved!";
     }
     
-    public List<ServiceRequestBasicDTO> getRequestsByStatus(RequestStatus status) {
-        List<ServiceRequest> requests = serviceRequestRepository.findByStatus(status);
-        return requests.stream()
+    public List<ServiceRequestBasicDTO> getRequestsByStatus(RequestStatus status, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "requestDateTime"));
+        Page<ServiceRequest> requestsPage = serviceRequestRepository.findByStatus(status, pageable);
+        return requestsPage.stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }

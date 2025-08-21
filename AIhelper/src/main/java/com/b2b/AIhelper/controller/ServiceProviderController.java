@@ -92,11 +92,15 @@ public class ServiceProviderController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
     
-    @Operation(summary = "Fetch service requests by status", description = "Returns service requests filtered by request status")
+    @Operation(summary = "Fetch service requests by status", description = "Returns service requests filtered by request status with pagination")
     @CrossOrigin(origins = "*")
     @GetMapping("/service-requests")
-    public ResponseEntity<ResponseDTO> getServiceRequestsByStatus(@RequestParam("status") RequestStatus status) {
-        List<ServiceRequestBasicDTO> requests = serviceProviderService.getRequestsByStatus(status);
+    public ResponseEntity<ResponseDTO> getServiceRequestsByStatus(
+        @RequestParam("status") RequestStatus status,
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size
+    ) {
+        List<ServiceRequestBasicDTO> requests = serviceProviderService.getRequestsByStatus(status, page, size);
         Map<String, Object> mapData = new HashMap<>();
         mapData.put("requests", requests);
         ResponseDTO responseDTO = new ResponseDTO(200, "Service requests fetched successfully", mapData);
