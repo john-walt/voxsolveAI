@@ -8,6 +8,8 @@ import java.util.UUID;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.b2b.AIhelper.utils.TechnicianStatus;
+
 @Entity
 public class Employee {
 
@@ -149,6 +151,17 @@ public class Employee {
         this.employeeAreaOfServices = employeeAreaOfServices;
     }
 
+    @Enumerated(EnumType.STRING)
+    private TechnicianStatus status = TechnicianStatus.AVAILABLE;
+
+    public TechnicianStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TechnicianStatus status) {
+        this.status = status;
+    }
+    
     // Helper methods to manage relationships
     public void addSkill(Skill skill) {
         EmployeeSkills employeeSkill = new EmployeeSkills();

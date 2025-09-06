@@ -85,7 +85,7 @@ public class ServiceProviderService {
         List<String> skillNames = skills.stream().map(Skill::getSkillName).toList();
         List<String> areaNames = areasOfService.stream().map(AreaOfService::getAreaName).toList();
 
-        return new ProficiencySkillsDropdownResponse(employees, skillNames, areaNames);
+        return new ProficiencySkillsDropdownResponse(employees, skills, areasOfService);
     }
 
     // Method to save the One-Time Role Setup data
@@ -112,7 +112,7 @@ public class ServiceProviderService {
         employee.setRole(role);
 
         if (request.getReportingManager() != null && !request.getReportingManager().equals("None")) {
-            Employee reportingManager = employeeRepository.findById(Long.valueOf(request.getReportingManager())).orElse(null);
+            Employee reportingManager = employeeRepository.findByEmployeeName(request.getReportingManager()).orElse(null);
             employee.setReportingManager(reportingManager);
         }
 
@@ -123,7 +123,7 @@ public class ServiceProviderService {
 
     // Method to save the Proficiency and Skills data
     public String saveProficiencySkills(ProficiencySkillsRequest request) {
-        Employee employee = employeeRepository.findById(Long.valueOf(request.getEmployeeName())).orElse(null);
+        Employee employee = employeeRepository.findByEmployeeName(request.getEmployeeName()).orElse(null);
         
         // Create and save shift timing
         ShiftTiming shiftTiming = new ShiftTiming();

@@ -3,44 +3,64 @@ package com.b2b.AIhelper.models;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.b2b.AIhelper.entity.AreaOfService;
 import com.b2b.AIhelper.entity.Employee;
+import com.b2b.AIhelper.entity.Skill;
 public class ProficiencySkillsDropdownResponse {
-    private List<String> employeeNames;
-    private List<String> skillNames;
-    private List<String> areaNames;
+    private List<IdNameDTO> employeeTypes;
+    private List<IdNameDTO> skillNames;
+    private List<IdNameDTO> areaNames;
 
-    public ProficiencySkillsDropdownResponse(List<Employee> employees, List<String> skillNames, List<String> areaNames) {
-        this.employeeNames = employees.stream()
-                                      .map(Employee::getEmployeeName) // Just take employee names
-                                      .collect(Collectors.toList());
-        this.skillNames = skillNames;
-        this.areaNames = areaNames;
+    public ProficiencySkillsDropdownResponse(List<Employee> employees, List<Skill> skills, List<AreaOfService> areasOfService) {
+        this.employeeTypes = employees.stream()
+            .map(emp -> new IdNameDTO(
+                emp.getRole().getId().toString(),
+                emp.getRole().getRoleName()
+            ))
+            .distinct()
+            .collect(Collectors.toList());
+
+        this.skillNames = skills.stream()
+            .map(skill -> new IdNameDTO(
+                skill.getId().toString(),
+                skill.getSkillName()
+            ))
+            .distinct()
+            .collect(Collectors.toList());
+
+        this.areaNames = areasOfService.stream()
+            .map(area -> new IdNameDTO(
+                area.getId().toString(),
+                area.getAreaName()
+            ))
+            .distinct()
+            .collect(Collectors.toList());
     }
 
-    // Getters and Setters
-    public List<String> getEmployeeNames() {
-        return employeeNames;
-    }
+	public List<IdNameDTO> getEmployeeTypes() {
+		return employeeTypes;
+	}
 
-    public void setEmployeeNames(List<String> employeeNames) {
-        this.employeeNames = employeeNames;
-    }
+	public void setEmployeeTypes(List<IdNameDTO> employeeTypes) {
+		this.employeeTypes = employeeTypes;
+	}
 
-    public List<String> getSkillNames() {
-        return skillNames;
-    }
+	public List<IdNameDTO> getSkillNames() {
+		return skillNames;
+	}
 
-    public void setSkillNames(List<String> skillNames) {
-        this.skillNames = skillNames;
-    }
+	public void setSkillNames(List<IdNameDTO> skillNames) {
+		this.skillNames = skillNames;
+	}
 
-    public List<String> getAreaNames() {
-        return areaNames;
-    }
+	public List<IdNameDTO> getAreaNames() {
+		return areaNames;
+	}
 
-    public void setAreaNames(List<String> areaNames) {
-        this.areaNames = areaNames;
-    }
+	public void setAreaNames(List<IdNameDTO> areaNames) {
+		this.areaNames = areaNames;
+	}
+
 }
 
 
